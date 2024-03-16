@@ -9,6 +9,7 @@ const startApp = (uid) => {
   navBar();
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
 
+  clearDom();
   // TODO: Put all orders on the DOM on App load
   getOrders(uid).then((orders) => showAllOrders(orders));
 };
