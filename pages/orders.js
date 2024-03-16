@@ -26,7 +26,7 @@ const showAllOrders = (array) => {
     </div>
     `;
   });
-  renderToDom('#store', domString);
+  renderToDom('#view', domString);
 };
 
-export default { showAllOrders, emptyOrders };
+export { showAllOrders, emptyOrders };
