@@ -2,16 +2,12 @@ import renderToDom from '../utils/renderToDom';
 import clearDom from '../utils/clearDom';
 
 const emptyOrders = () => {
-  const domString = '<h1>No Authors</h1>';
+  const domString = '<h1>No Orders</h1>';
   renderToDom('#store', domString);
 };
 
 const showAllOrders = (array) => {
   clearDom();
-
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-author-btn">Add An Author</button>';
-
-  renderToDom('#add-button', btnString);
 
   let domString = '';
   array.forEach((item) => {
