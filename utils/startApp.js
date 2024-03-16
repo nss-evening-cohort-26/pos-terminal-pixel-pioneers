@@ -1,9 +1,13 @@
 import domBuilder from '../components/shared/domBuilder';
 import logoutButton from '../components/buttons/logoutButton';
+import { getOrders } from '../api/orderData';
+import viewOrder from '../pages/viewOrder';
 
 const startApp = (uid) => {
-  domBuilder();
-  logoutButton();
-  console.warn(uid);
+  domBuilder(); // BUILD THE DOM
+  logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
+
+  // TODO: Put all orders on the DOM on App load
+  getOrders(uid).then((orders) => viewOrder(orders));
 };
 export default startApp;
