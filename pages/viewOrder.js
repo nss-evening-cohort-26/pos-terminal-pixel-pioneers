@@ -21,6 +21,6 @@ const viewOrder = (obj) => {
        </div>
      </div>
    `;
-  renderToDom('#view', domString);
+  renderToDom('#order-cards', domString);
 };
 export default viewOrder;
