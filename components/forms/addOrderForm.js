@@ -1,27 +1,32 @@
-// Form to add vocab card
-// import clearDom from '../../utils/clearDom';
-// import renderToDOM from '../../utils/renderToDom';
+// Form to add order
+import clearDom from '../../utils/clearDom';
+import renderToDOM from '../../utils/renderToDom';
 // import selectLanguage from './selectLanguage';
 
-// // USING THIS FORM FOR BOTH CREATE AND UPDATE
-// const addVocabForm = (obj = {}, uid) => {
-//   clearDom();
-//   const domString = `
-//     <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
-//       <div class="form-group">
-//         <label for="title">Vocab Title</label>
-//         <input type="text" class="form-control" id="vocab-title" aria-describedby="vocabTitle" placeholder="Enter Vocab Title" value="${obj.title || ''}" required>
-//       </div>
-//       <div class="form-group">
-//         <label for="description">Definition</label>
-//         <textarea class="form-control" placeholder="Vocab Definition" id="vocab-definition" style="height: 100px">${obj.definition || ''}</textarea>
-//       </div>
-//       <div class="form-group" id="select-language"></div>
-//       <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Vocab' : 'Submit Form'}</button>
-//     </form>`;
+// USING THIS FORM FOR BOTH CREATE AND UPDATE
+const addVocabForm = (obj = {}) => {
+  clearDom();
+  const domString = `
+    <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
+      <div class="form-group">
+        <label for="title">Order Name</label>
+        <input type="text" class="form-control" id="order-name" aria-describedby="vocabTitle" value="${obj.name || ''}" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Customer Phone</label>
+        <textarea class="form-control" id="order-phone" style="height: 100px">${obj.customerPhone || ''}</textarea>
+      </div>
+      <div class="form-group">
+      <label for="description">Customer Email</label>
+      <textarea class="form-control" id="order-email" style="height: 100px">${obj.customerEmail || ''}</textarea>
+    </div>
+      <div class="form-group" id="select-order-type">
+      <label for="description">Order Type</label></div>
+      <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Order' : 'Create Order'}</button>
+    </form>`;
 
-//   renderToDOM('#form-container', domString);
-//   selectLanguage(`${obj.language_id || ''}`, uid);
-// };
+  renderToDOM('#form-container', domString);
+  // selectOrderType(`${obj.orderType || ''}`, uid);
+};
 
-// export default addVocabForm;
+export default addVocabForm;
