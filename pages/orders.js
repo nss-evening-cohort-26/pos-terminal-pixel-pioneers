@@ -16,7 +16,7 @@ const showAllOrders = (array) => {
       <div class="card-body">
         <h5 class="card-title">${item.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${item.customerPhone}</h6>
-        <h6 class="card-text"${item.customerEmail}></h6>   
+        <h6 class="card-subtitle mb-2 text-muted">${item.customerEmail}</h6>  
         <hr>
         <p class="card-text">${item.orderType}</p>
         <i class="btn btn-success" id="view-author-btn--${item.firebaseKey}"><span class="fas fa-eye"></span></i>
