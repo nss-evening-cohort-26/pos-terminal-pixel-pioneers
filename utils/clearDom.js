@@ -1,5 +1,5 @@
 const clearDom = () => {
-  console.warn();
+  console.warn('clearDom');
 };
 
 export default clearDom;
