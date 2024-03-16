@@ -1,13 +1,11 @@
 import domBuilder from '../components/shared/domBuilder';
-import logoutButton from '../components/buttons/loginButton';
+import logoutButton from '../components/buttons/logoutButton';
 import viewOrder from '../pages/viewOrder';
 import { getOrders } from '../api/orderData';
 
 const startApp = (uid) => {
-  // console.warn(startApp);
-  domBuilder(uid);
-  viewOrder(uid);
-  logoutButton(uid);
+  domBuilder();
+  logoutButton();
 
   getOrders(uid).then((orders) => viewOrder(orders));
 };
