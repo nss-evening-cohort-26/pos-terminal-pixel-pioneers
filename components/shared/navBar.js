@@ -1,7 +1,6 @@
 import renderToDom from '../../utils/renderToDom';
 
 const navBar = () => {
-  console.warn('NavBar');
   const domString = `
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -10,22 +9,16 @@ const navBar = () => {
            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-             <a class="nav-link" href="#" id="view-orders">
-               View Order <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item active">
-             <a class="nav-link" href="#" id="create-order">
-               Create Order <span class="sr-only">(current)</span>
-              </a>
-            </li>
-          </ul>
+             <button type="button" class="btn btn-outline-dark" id="view-orders">
+               View Order 
+              </button>
+             <button type="button" class="btn btn-outline-dark" id="create-order">
+               Create Order
+              </button>
+        </div>
           <span class="navbar-text">
             <div id="logout-button"></div>
           </span>
-        </div>
       </div>
     </nav>`;
   renderToDom('#navigation', domString);
