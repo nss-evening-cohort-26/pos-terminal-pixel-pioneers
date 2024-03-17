@@ -1,3 +1,4 @@
+import { getItems } from '../api/itemData';
 import { createNewOrder, getOrders } from '../api/orderData';
 
 const navigationEvents = (uid) => {
@@ -10,6 +11,11 @@ const navigationEvents = (uid) => {
     if (e.target.id.includes('view-orders')) {
       console.warn('view orders clicked');
       getOrders(uid);
+    }
+
+    if (e.target.id.includes('create-item')) {
+      console.warn('create items clicked');
+      getItems(uid);
     }
 
     // if (e.target.id.includes('logo')) {
