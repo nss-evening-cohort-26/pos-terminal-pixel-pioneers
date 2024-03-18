@@ -1,5 +1,7 @@
-import { getItems } from '../api/itemData';
-import { createNewOrder, getOrders } from '../api/orderData';
+// import { getItems } from '../api/itemData';
+import { createNewOrder } from '../api/orderData';
+import { showAllItems } from '../pages/items';
+import { showAllOrders } from '../pages/orders';
 
 const navigationEvents = (uid) => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
@@ -10,12 +12,12 @@ const navigationEvents = (uid) => {
 
     if (e.target.id.includes('view-orders')) {
       console.warn('view orders clicked');
-      getOrders(uid);
+      showAllOrders(uid);
     }
 
     if (e.target.id.includes('create-item')) {
       console.warn('create items clicked');
-      getItems(uid);
+      showAllItems(uid);
     }
 
     // if (e.target.id.includes('logo')) {

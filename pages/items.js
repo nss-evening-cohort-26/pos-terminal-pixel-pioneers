@@ -6,18 +6,18 @@ const emptyItems = () => {
   renderToDom('#view', domString);
 };
 
-const showAllItems = (array) => {
+const showAllItems = (getItems) => {
+  console.warn('showAllItems', getItems);
   clearDom();
 
   let domString = '';
-  array.forEach((obj) => {
+  getItems.forEach((obj) => {
     domString += `
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${obj.itemName}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${obj.itemPrice}</h6>
           <hr>
-          <i class="btn btn-success" id="view-item-btn--${obj.firebaseKey}"><span class="fas fa-eye"></span></i>
           <i class="btn btn-info" id="update-item--${obj.firebaseKey}"><span class="fas fa-edit"></span></i>
           <i class="btn btn-danger" id="delete-item-btn--${obj.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
         </div>
