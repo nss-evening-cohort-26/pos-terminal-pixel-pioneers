@@ -3,7 +3,7 @@ import clearDom from '../utils/clearDom';
 
 const emptyOrders = () => {
   const domString = '<h1>No Orders</h1>';
-  renderToDom('#store', domString);
+  renderToDom('#view', domString);
 };
 
 const showAllOrders = (array) => {
