@@ -7,3 +7,30 @@ body {
   color: brown;
   text-align: center;
 }
+
+#home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 400px;
+
+}
+
+.btn-home {
+  width: 25%;
+  margin-top: 20px;
+}
+
+#create-btn {
+  background: teal;
+}
+
+#view-btn {
+background: red;
+}
+
+#rev-btn {
+background: goldenrod;
+}
