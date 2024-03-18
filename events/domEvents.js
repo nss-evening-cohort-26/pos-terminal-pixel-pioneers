@@ -1,6 +1,8 @@
 import { getOrders } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
 import clearDom from '../utils/clearDom';
+import { getItems } from '../api/itemData';
+import { showAllItems } from '../pages/items';
 // // import addBookForm from '../components/forms/addBookForm';
 // import { getItem, getSingleItem } from '../api/itemData';
 // import { showAllItems } from '../pages/items';
@@ -20,4 +22,11 @@ const domEvents = (uid) => {
   });
 };
 
-export default domEvents;
+const buttonEvents = (uid) => {
+  document.querySelector('#main-container').addEventListener('click', (e) => {
+    if (e.target.id.includes('view-order-btn--')) {
+      getItems(uid).then((items) => showAllItems(items));
+    }
+  });
+};
+export { domEvents, buttonEvents };
