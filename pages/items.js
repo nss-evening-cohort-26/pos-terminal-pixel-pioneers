@@ -6,12 +6,11 @@ const emptyItems = () => {
   renderToDom('#view', domString);
 };
 
-const showAllItems = (getItems) => {
-  console.warn('showAllItems', getItems);
+const showAllItems = (array) => {
   clearDom();
 
   let domString = '';
-  getItems.forEach((obj) => {
+  array.forEach((obj) => {
     domString += `
       <div class="card" style="width: 18rem;">
         <div class="card-body">
