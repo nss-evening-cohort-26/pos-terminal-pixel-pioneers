@@ -17,9 +17,8 @@ const showAllItems = (array) => {
           <h5 class="card-title">${obj.itemName}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${obj.itemPrice}</h6>
           <hr>
-          <i class="btn btn-success" id="view-author-btn--${obj.firebaseKey}"><span class="fas fa-eye"></span></i>
-          <i class="btn btn-info" id="update-author--${obj.firebaseKey}"><span class="fas fa-edit"></span></i>
-          <i class="btn btn-danger" id="delete-author-btn--${obj.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
+          <i class="btn btn-info" id="update-item--${obj.firebaseKey}"><span class="fas fa-edit"></span></i>
+          <i class="btn btn-danger" id="delete-item-btn--${obj.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
         </div>
       </div>
       `;
