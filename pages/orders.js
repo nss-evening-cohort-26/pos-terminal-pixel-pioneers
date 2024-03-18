@@ -6,11 +6,12 @@ const emptyOrders = () => {
   renderToDom('#view', domString);
 };
 
-const showAllOrders = (array) => {
+const showAllOrders = (getOrders) => {
   clearDom();
 
   let domString = '';
-  array.forEach((item) => {
+  getOrders.forEach((item) => {
+    console.warn('getOrder', getOrders);
     domString += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
