@@ -4,10 +4,10 @@ import renderToDOM from '../../utils/renderToDom';
 // import selectLanguage from './selectLanguage';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
-const addVocabForm = (obj = {}) => {
+const addOrderForm = (obj = {}) => {
   clearDom();
   const domString = `
-    <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
+    <form id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="mb-4">
       <div class="form-group">
         <label for="title">Order Name</label>
         <input type="text" class="form-control" id="order-name" aria-describedby="vocabTitle" value="${obj.name || ''}" required>
@@ -29,4 +29,4 @@ const addVocabForm = (obj = {}) => {
   // selectOrderType(`${obj.orderType || ''}`, uid);
 };
 
-export default addVocabForm;
+export default addOrderForm;
