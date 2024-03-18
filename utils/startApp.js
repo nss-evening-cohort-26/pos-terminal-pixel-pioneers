@@ -3,13 +3,15 @@ import logoutButton from '../components/buttons/logoutButton';
 // import { getOrders } from '../api/orderData';
 import navBar from '../components/shared/navBar';
 import clearDom from './clearDom';
-// import { showAllOrders } from '../pages/orders';
-import homePageButtons from '../components/buttons/homePageButtons';
+import navigationEvents from '../events/navigationEvents';
+import { showAllOrders } from '../pages/orders';
 
 const startApp = (uid) => {
   domBuilder(); // BUILD THE DOM
   navBar();
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
+  navigationEvents();
+
   clearDom();
   homePageButtons(uid);
 
