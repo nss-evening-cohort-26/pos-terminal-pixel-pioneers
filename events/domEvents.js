@@ -1,10 +1,15 @@
-import { getOrders } from '../api/orderData';
+import { deleteOrder, getOrders } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
-import clearDom from '../utils/clearDom';
-import { deleteItem, getItems, getSingleItems } from '../api/itemData';
+import { getItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
-// import addOrderForm from '../components/forms/addOrderForm';
-import addItemForm from '../components/forms/addItemForm';
+import addOrderForm from '../components/forms/addOrderForm';
+// // import addBookForm from '../components/forms/addBookForm';
+// import { getItem, getSingleItem } from '../api/itemData';
+// import { showAllItems } from '../pages/items';
+// // import addItemForm from '../components/forms/addAuthorForm';
+// // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
+// // import viewOrder from '../pages/viewBook';
+// // import viewAuthors from '../pages/viewAuthor';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -12,31 +17,25 @@ const domEvents = (uid) => {
     if (e.target.id.includes('view-btn')) {
       getOrders(uid).then((orders) => showAllOrders(orders));
       // console.warn(e.target.id);
-      clearDom(3);
+    }
+    if (e.target.id.includes('create-btn')) {
+      addOrderForm({}, uid);
     }
   });
 };
-
 const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('view-order-btn--')) {
       getItems(uid).then((items) => showAllItems(items));
     }
-
-    if (e.target.id.includes('update-item-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      console.warn('item edit click');
-
-      getSingleItems(firebaseKey).then((itemObj) => addItemForm(itemObj, uid));
-    }
-
-    if (e.target.id.includes('delete-item-btn')) {
+    if (e.target.id.includes('delete-order-btn')) {
       // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure you want to delete this item from this order?')) {
+      if (window.confirm('Want to delete?')) {
+        console.warn('CLICKED DELETE ORDER', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
 
-        deleteItem(firebaseKey).then(() => {
-          getItems(uid).then(showAllItems);
+        deleteOrder(firebaseKey).then(() => {
+          getOrders(uid).then(showAllOrders);
         });
       }
     }
