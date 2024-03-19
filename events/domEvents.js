@@ -1,8 +1,9 @@
-import { getOrders } from '../api/orderData';
+import { deleteOrder, getOrders } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
 import clearDom from '../utils/clearDom';
 import { getItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
+
 // // import addBookForm from '../components/forms/addBookForm';
 // import { getItem, getSingleItem } from '../api/itemData';
 // import { showAllItems } from '../pages/items';
@@ -26,6 +27,17 @@ const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('view-order-btn--')) {
       getItems(uid).then((items) => showAllItems(items));
+    }
+    if (e.target.id.includes('delete-order-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        console.warn('CLICKED DELETE ORDER', e.target.id);
+        const [, firebaseKey] = e.target.id.split('--');
+
+        deleteOrder(firebaseKey).then(() => {
+          getOrders(uid).then(showAllOrders);
+        });
+      }
     }
   });
 };
