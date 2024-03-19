@@ -20,13 +20,16 @@ const addOrderForm = (obj = {}) => {
       <label for="description">Customer Email</label>
       <textarea class="form-control" id="order-email" style="height: 100px">${obj.customerEmail || ''}</textarea>
     </div>
-      <div class="form-group" id="select-order-type">
+    <label for="orders">Order Type:</label>
+    <select name="order-type" id="types-of-orders">
+      <option value="in-person">In-Person</option>
+      <option value="Phone">Phone</option>
+    </select>
       <label for="description">Order Type</label></div>
       <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Order' : 'Create Order'}</button>
     </form>`;
 
   renderToDOM('#form-container', domString);
-  // selectOrderType(`${obj.orderType || ''}`, uid);
 };
 
 export default addOrderForm;
