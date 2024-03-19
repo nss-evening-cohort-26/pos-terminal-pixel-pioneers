@@ -2,7 +2,7 @@ import { deleteOrder, getOrders } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
 import { getItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
-
+import addOrderForm from '../components/forms/addOrderForm';
 // // import addBookForm from '../components/forms/addBookForm';
 // import { getItem, getSingleItem } from '../api/itemData';
 // import { showAllItems } from '../pages/items';
@@ -10,7 +10,6 @@ import { showAllItems } from '../pages/items';
 // // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
 // // import viewOrder from '../pages/viewBook';
 // // import viewAuthors from '../pages/viewAuthor';
-import addOrderForm from '../components/forms/addOrderForm';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {

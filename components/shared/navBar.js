@@ -15,9 +15,6 @@ const navBar = () => {
              <button type="button" class="btn btn-outline-dark" id="create-order">
                Create Order
               </button>
-              <button type="button" class="btn btn-outline-dark" id="create-item">
-              Create Item
-             </button>
         </div>
           <span class="navbar-text">
             <div id="logout-button"></div>
