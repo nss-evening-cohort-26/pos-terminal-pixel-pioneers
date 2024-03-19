@@ -1,5 +1,9 @@
 import { deleteOrder, getOrders } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
+// import clearDom from '../utils/clearDom';
+// import { getItems } from '../api/itemData';
+// import { showAllItems } from '../pages/items';
+import addOrderForm from '../components/forms/addItemForm';
 import { getItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
 
@@ -10,7 +14,6 @@ import { showAllItems } from '../pages/items';
 // // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
 // // import viewOrder from '../pages/viewBook';
 // // import viewAuthors from '../pages/viewAuthor';
-import addOrderForm from '../components/forms/addOrderForm';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -18,6 +21,7 @@ const domEvents = (uid) => {
     if (e.target.id.includes('view-btn')) {
       getOrders(uid).then((orders) => showAllOrders(orders));
       // console.warn(e.target.id);
+      // clearDom(3);
     }
     if (e.target.id.includes('create-btn')) {
       addOrderForm({}, uid);
