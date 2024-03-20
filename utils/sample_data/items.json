@@ -1,58 +1,224 @@
 {
   "-NspVTS1bBhkEqIHZPQw": {
+    "firebaseKey": "-NspVTS1bBhkEqIHZPQw",
     "itemName": "Hawaiian Pizza (Ham, Pineapple)",
     "itemPrice": 11,
-    "orderID": "9636673780",
-    "firebaseKey": "-NspVTS1bBhkEqIHZPQw",
     "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
   },
   "-NspVTS1bBhkEqIHZPQx": {
+    "firebaseKey": "-NspVTS1bBhkEqIHZPQx",
     "itemName": "Garlic Parmesan Wings",
     "itemPrice": 20,
-    "orderID": "2903812977",
-    "firebaseKey": "-NspVTS1bBhkEqIHZPQx",
     "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
   },
   "-NspVTS29Ffzp3eJP7yk": {
+    "firebaseKey": "-NspVTS29Ffzp3eJP7yk",
     "itemName": "Spinach and artichoke dip",
     "itemPrice": 5,
-    "orderID": "1203827679",
-    "firebaseKey": "-NspVTS29Ffzp3eJP7yk",
+    "orderID": "-NspU6AIPICqaXVtw3UG",
     "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
   },
   "-NspVTS3C3ajOg_NP4-O": {
+    "firebaseKey": "-NspVTS3C3ajOg_NP4-O",
     "itemName": "Cheesy Bread Sticks",
     "itemPrice": 23,
-    "orderID": "0081480334",
-    "firebaseKey": "-NspVTS3C3ajOg_NP4-O",
+    "orderID": "-NspU6ADS5JIgE39GiOX",
     "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
   },
   "-NspVTS4xOnyHd3_xKq7": {
+    "firebaseKey": "-NspVTS4xOnyHd3_xKq7",
     "itemName": "Buffalo Wings",
     "itemPrice": 14,
-    "orderID": "4295554979",
-    "firebaseKey": "-NspVTS4xOnyHd3_xKq7",
+    "orderID": "-NspU6ANVW8wJToBTun9",
     "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
   },
   "-NspVTS4xOnyHd3_xKq8": {
+    "firebaseKey": "-NspVTS4xOnyHd3_xKq8",
     "itemName": "Pepperoni stuffed crust",
     "itemPrice": 7,
-    "orderID": "0570319692",
-    "firebaseKey": "-NspVTS4xOnyHd3_xKq8",
+    "orderID": "-NspU6ADS5JIgE39GiOX",
     "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
   },
   "-NspVTS5ZQhun-T7fZ0l": {
+    "firebaseKey": "-NspVTS5ZQhun-T7fZ0l",
     "itemName": "Caesar salad",
     "itemPrice": 21,
-    "orderID": "5583125594",
-    "firebaseKey": "-NspVTS5ZQhun-T7fZ0l",
+    "orderID": "-NspU6A9EH-xbgpmjB0Z",
     "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
   },
   "-NspVTS6IYrxt96aGqwB": {
+    "firebaseKey": "-NspVTS6IYrxt96aGqwB",
     "itemName": "Grizzly Beer",
     "itemPrice": 22,
-    "orderID": "7294223971",
-    "firebaseKey": "-NspVTS6IYrxt96aGqwB",
+    "orderID": "-NspU6A9EH-xbgpmjB0Z",
     "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hSUM_ZOL57PgzP": {
+    "firebaseKey": "-NtO66hSUM_ZOL57PgzP",
+    "itemName": "Chicken Tenders - kids",
+    "itemPrice": 6,
+    "orderID": "-NspU6AA4VtVeaSOt0W2",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hUq2gOGvypC-sO": {
+    "firebaseKey": "-NtO66hUq2gOGvypC-sO",
+    "itemName": "Supreme Pizza",
+    "itemPrice": 25,
+    "orderID": "-NspU6AA4VtVeaSOt0W2",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hUq2gOGvypC-sP": {
+    "firebaseKey": "-NtO66hUq2gOGvypC-sP",
+    "itemName": "Buffalo Dip",
+    "itemPrice": 8,
+    "orderID": "-NspU6ABgKcxKU2fmxrb",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hVncpvg1W192f1": {
+    "firebaseKey": "-NtO66hVncpvg1W192f1",
+    "itemName": "Spicy Totcho",
+    "itemPrice": 5,
+    "orderID": "-NspU6ABgKcxKU2fmxrb",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hWcV3lScvNDFAE": {
+    "firebaseKey": "-NtO66hWcV3lScvNDFAE",
+    "itemName": "Chocolate Chip Cannoli",
+    "itemPrice": 10,
+    "orderID": "-NspU6ACu9uzYuKLsoH9",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hXkdHco2DY9USx": {
+    "firebaseKey": "-NtO66hXkdHco2DY9USx",
+    "itemName": "S'mores Dessert Pizza",
+    "itemPrice": 7,
+    "orderID": "-NspU6AFl00lhYvyK8Oc",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
+  },
+  "-NtO66hYj6o1bWvjssKm": {
+    "firebaseKey": "-NtO66hYj6o1bWvjssKm",
+    "itemName": "Gelato",
+    "itemPrice": 4,
+    "orderID": "-NspU6AOSdB89Sc883ps",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtO66hZZX24_UQtGVRO": {
+    "firebaseKey": "-NtO66hZZX24_UQtGVRO",
+    "itemName": "Cinnamon Pretzel Sticks",
+    "itemPrice": 7,
+    "orderID": "-NspU6AJLdXX1Hn9YZTC",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtO66hZZX24_UQtGVRP": {
+    "firebaseKey": "-NtO66hZZX24_UQtGVRP",
+    "itemName": "Philly Cheese Steak Pizza",
+    "itemPrice": 28,
+    "orderID": "-NspU6AFl00lhYvyK8Oc",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
+  },
+  "-NtO66h_Eb_S3V8WAEvq": {
+    "firebaseKey": "-NtO66h_Eb_S3V8WAEvq",
+    "itemName": "Chopped House Salad",
+    "itemPrice": 13,
+    "orderID": "-NspU6ACu9uzYuKLsoH9",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  },
+  "-NtO66hasRLx9v7SjM3T": {
+    "firebaseKey": "-NtO66hasRLx9v7SjM3T",
+    "itemName": "Chicken Bacon Ranch Pizza",
+    "itemPrice": 24,
+    "orderID": "-NspU6AGrQIp0glzhySX",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
+  },
+  "-NtO66hb0Ow66u3YJ-Xg": {
+    "firebaseKey": "-NtO66hb0Ow66u3YJ-Xg",
+    "itemName": "Hawaii Five-0 Calzone",
+    "itemPrice": 18,
+    "orderID": "-NspU6AOSdB89Sc883ps",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtO66hc3PpXhT_GbvZs": {
+    "firebaseKey": "-NtO66hc3PpXhT_GbvZs",
+    "itemName": "Meat Lovers Calzone",
+    "itemPrice": 20,
+    "orderID": "-NspU6AJLdXX1Hn9YZTC",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtO66hd_ovlJlEjxpZM": {
+    "firebaseKey": "-NtO66hd_ovlJlEjxpZM",
+    "itemName": "Deep Dish Make Your Own Pizza",
+    "itemPrice": 25,
+    "orderID": "-NspU6BOPd1DCtGrrw9f",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtO66he0PUWJFDZe0Ni": {
+    "firebaseKey": "-NtO66he0PUWJFDZe0Ni",
+    "itemName": "Lemon Tarts",
+    "itemPrice": 9,
+    "orderID": "-NspU6BOPd1DCtGrrw9f",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtO66he0PUWJFDZe0Nj": {
+    "firebaseKey": "-NtO66he0PUWJFDZe0Nj",
+    "itemName": "Pretty Fly for a White Pizza",
+    "itemPrice": 14,
+    "orderID": "-NspU6AKC4FC2-3wJZq7",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtO66hfn-bpT-nDI17B": {
+    "firebaseKey": "-NtO66hfn-bpT-nDI17B",
+    "itemName": "Brookie",
+    "itemPrice": 8,
+    "orderID": "-NspU6AKC4FC2-3wJZq7",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtO66hgmur-Pn2uMdOr": {
+    "firebaseKey": "-NtO66hgmur-Pn2uMdOr",
+    "itemName": "Nashville Hot Chicken Pizza",
+    "itemPrice": 19,
+    "orderID": "-NspU6AGrQIp0glzhySX",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
+  },
+  "-NtO66hhyDGz23U1zFvE": {
+    "firebaseKey": "-NtO66hhyDGz23U1zFvE",
+    "itemName": "Bacon Mach & Cheese Pizza",
+    "itemPrice": 21,
+    "orderID": "-NspU6ALw-cNIgTkRE27",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtO66hiyhz_9KSS1SR1": {
+    "firebaseKey": "-NtO66hiyhz_9KSS1SR1",
+    "itemName": "Veggie Pizza",
+    "itemPrice": 14,
+    "orderID": "-NspU6BQACiG4XiyAIWo",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtO66hjueJVs5kUjlkD": {
+    "firebaseKey": "-NtO66hjueJVs5kUjlkD",
+    "itemName": "Cheesin' Pizza",
+    "itemPrice": 12,
+    "orderID": "-NspU6AHO1YpLxWZ4gUI",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
+  },
+  "-NtO66hjueJVs5kUjlkE": {
+    "firebaseKey": "-NtO66hjueJVs5kUjlkE",
+    "itemName": "Personal Pizza - kids",
+    "itemPrice": 5,
+    "orderID": "-NspU6BQACiG4XiyAIWo",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtO66hkM302cq9Nn-OZ": {
+    "firebaseKey": "-NtO66hkM302cq9Nn-OZ",
+    "itemName": "Mac & Cheese - kids",
+    "itemPrice": 7,
+    "orderID": "-NspU6ALw-cNIgTkRE27",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtO66hl3IFTTB8iid7w": {
+    "firebaseKey": "-NtO66hl3IFTTB8iid7w",
+    "itemName": "Grilled Cheese - kids",
+    "itemPrice": 5,
+    "orderID": "-NspU6AHO1YpLxWZ4gUI",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
   }
 }
