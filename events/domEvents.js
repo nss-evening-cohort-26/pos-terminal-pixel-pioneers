@@ -1,8 +1,12 @@
-import { deleteOrder, getOrders } from '../api/orderData';
+import { deleteOrder, getOrders, getSingleOrder } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
-import { getItems } from '../api/itemData';
-import { showAllItems } from '../pages/items';
+// import clearDom from '../utils/clearDom';
+// import { showAllItems } from '../pages/items';
 import addOrderForm from '../components/forms/addOrderForm';
+import { deleteItem, getItems, getSingleItems } from '../api/itemData';
+import { showAllItems } from '../pages/items';
+import addItemForm from '../components/forms/addItemForm';
+
 // // import addBookForm from '../components/forms/addBookForm';
 // import { getItem, getSingleItem } from '../api/itemData';
 // import { showAllItems } from '../pages/items';
@@ -17,7 +21,9 @@ const domEvents = (uid) => {
     if (e.target.id.includes('view-btn')) {
       getOrders(uid).then((orders) => showAllOrders(orders));
       // console.warn(e.target.id);
+      // clearDom(3);
     }
+    // CLICK EVENT FOR CREATE ORDER FORM WELCOME BUTTON
     if (e.target.id.includes('create-btn')) {
       addOrderForm({}, uid);
     }
@@ -25,11 +31,14 @@ const domEvents = (uid) => {
 };
 const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
+    // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
       getItems(uid).then((items) => showAllItems(items));
     }
+
+    // CLICK EVENT FOR DELETING A ORDER
     if (e.target.id.includes('delete-order-btn')) {
-      // eslint-disable-next-line no-alert
+    // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         console.warn('CLICKED DELETE ORDER', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
@@ -39,6 +48,32 @@ const buttonEvents = (uid) => {
         });
       }
     }
+
+    // CLICK EVENT FOR DELETING A ITEM
+    if (e.target.id.includes('delete-item-btn')) {
+    // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        console.warn('CLICKED DELETE ORDER', e.target.id);
+        const [, firebaseKey] = e.target.id.split('--');
+
+        deleteItem(firebaseKey).then(() => {
+          getItems(uid).then(showAllItems);
+        });
+      }
+    }
+    // CLICK EVENT FOR UPDATING A ITEM
+    if (e.target.id.includes('update-item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleItems(firebaseKey).then((itemObject) => addItemForm(itemObject, uid));
+    }
+    // CLICK EVENT FOR UPDATING A ORDER
+    if (e.target.id.includes('update-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject, uid));
+    }
   });
 };
+
 export { domEvents, buttonEvents };
