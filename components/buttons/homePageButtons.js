@@ -20,4 +20,5 @@ const homePageButtons = (user) => {
 //   document.querySelector('#home-container').innerHTML = domString;
 //   // document.querySelector('#google-auth').addEventListener('click', signIn);
 // };
+
 export default homePageButtons;
