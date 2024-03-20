@@ -13,12 +13,12 @@ const addOrderForm = (obj = {}) => {
         <input type="text" class="form-control" id="order-name" aria-describedby="vocabTitle" value="${obj.name || ''}" required>
       </div>
       <div class="form-group">
-        <label for="description">Customer Phone</label>
-        <textarea class="form-control" id="order-phone" style="height: 100px">${obj.customerPhone || ''}</textarea>
+        <label for="phone">Customer Phone</label>
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-123-1234" class="form-control" id="order-phone" value="${obj.customerPhone || ''}" required>
       </div>
       <div class="form-group">
       <label for="description">Customer Email</label>
-      <textarea class="form-control" id="order-email" style="height: 100px">${obj.customerEmail || ''}</textarea>
+      <input type="email" class="form-control" id="order-email" value="${obj.customerEmail || ''}" required>
     </div>
     <label for="orders">Order Type:</label>
     <select name="order-type" id="types-of-orders">
