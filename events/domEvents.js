@@ -6,14 +6,7 @@ import addOrderForm from '../components/forms/addOrderForm';
 import { deleteItem, getItems, getSingleItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
 import addItemForm from '../components/forms/addItemForm';
-
-// // import addBookForm from '../components/forms/addBookForm';
-// import { getItem, getSingleItem } from '../api/itemData';
-// import { showAllItems } from '../pages/items';
-// // import addItemForm from '../components/forms/addAuthorForm';
-// // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
-// // import viewOrder from '../pages/viewBook';
-// // import viewAuthors from '../pages/viewAuthor';
+import showOrderItems from '../api/showOrderItems';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -33,7 +26,7 @@ const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
-      getItems(uid).then((items) => showAllItems(items));
+      getItems(uid).then((items) => showOrderItems(items));
     }
 
     // CLICK EVENT FOR DELETING A ORDER
