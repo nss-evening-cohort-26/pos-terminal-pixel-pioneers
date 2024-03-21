@@ -1,9 +1,20 @@
-import { getOrders } from '../api/orderData';
+import { deleteOrder, getOrders, getSingleOrder } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
-import { getItems } from '../api/itemData';
-import { showAllItems } from '../pages/items';
+// import clearDom from '../utils/clearDom';
+// import { showAllItems } from '../pages/items';
 import addOrderForm from '../components/forms/addOrderForm';
-import { deleteOrderItemsRelationship } from '../api/mergedData';
+import { deleteItem, getItems, getSingleItems } from '../api/itemData';
+import { showAllItems } from '../pages/items';
+import addItemForm from '../components/forms/addItemForm';
+import closeOrderForm from '../components/forms/closeOrderForm';
+
+// // import addBookForm from '../components/forms/addBookForm';
+// import { getItem, getSingleItem } from '../api/itemData';
+// import { showAllItems } from '../pages/items';
+// // import addItemForm from '../components/forms/addAuthorForm';
+// // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
+// // import viewOrder from '../pages/viewBook';
+// // import viewAuthors from '../pages/viewAuthor';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -11,7 +22,9 @@ const domEvents = (uid) => {
     if (e.target.id.includes('view-btn')) {
       getOrders(uid).then((orders) => showAllOrders(orders));
       // console.warn(e.target.id);
+      // clearDom(3);
     }
+    // CLICK EVENT FOR CREATE ORDER FORM WELCOME BUTTON
     if (e.target.id.includes('create-btn')) {
       addOrderForm({}, uid);
     }
@@ -19,22 +32,14 @@ const domEvents = (uid) => {
 };
 const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
+    // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
-      getOrders(uid).then((items) => showAllOrders(items));
+      getItems(uid).then((items) => showAllItems(items));
     }
-    // if (e.target.id.includes('delete-order-btn')) {
-    //   // eslint-disable-next-line no-alert
-    //   if (window.confirm('Want to delete?')) {
-    //     console.warn('CLICKED DELETE ORDER', e.target.id);
-    //     const [, firebaseKey] = e.target.id.split('--');
 
-    //     deleteOrder(firebaseKey).then(() => {
-    //       getOrders(uid).then(showAllOrders);
-    //     });
-    //   }
-    // }
+    // CLICK EVENT FOR DELETING A ORDER
     if (e.target.id.includes('delete-order-btn')) {
-      // eslint-disable-next-line no-alert
+    // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         console.warn('DELETE AUTHOR', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
@@ -44,6 +49,39 @@ const buttonEvents = (uid) => {
         });
       }
     }
+
+    // CLICK EVENT FOR DELETING A ITEM
+    if (e.target.id.includes('delete-item-btn')) {
+    // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        console.warn('CLICKED DELETE ORDER', e.target.id);
+        const [, firebaseKey] = e.target.id.split('--');
+
+        deleteItem(firebaseKey).then(() => {
+          getItems(uid).then(showAllItems);
+        });
+      }
+    }
+    // CLICK EVENT FOR UPDATING A ITEM
+    if (e.target.id.includes('update-item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleItems(firebaseKey).then((itemObject) => addItemForm(itemObject, uid));
+    }
+    // CLICK EVENT FOR UPDATING A ORDER
+    if (e.target.id.includes('update-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject, uid));
+    }
+    if (e.target.id.includes('go-to-payment-btn')) {
+      console.warn('button clicked');
+      closeOrderForm({}, uid);
+    }
+    if (e.target.id.includes('add-item-btn')) {
+      addItemForm({}, uid);
+    }
   });
 };
+
 export { domEvents, buttonEvents };

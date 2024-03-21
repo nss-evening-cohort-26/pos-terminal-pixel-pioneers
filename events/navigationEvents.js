@@ -1,20 +1,22 @@
-// import { getItems } from '../api/itemData';
-import { createNewOrder } from '../api/orderData';
+import { getOrders } from '../api/orderData';
+import addOrderForm from '../components/forms/addOrderForm';
 import { showAllOrders } from '../pages/orders';
 
 const navigationEvents = (uid) => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
     if (e.target.id.includes('create-order')) {
-      createNewOrder(uid);
+      console.warn('create order clicked');
+      addOrderForm(uid);
     }
 
     if (e.target.id.includes('view-orders')) {
-      showAllOrders(uid);
+      console.warn('view orders clicked');
+      getOrders(uid).then(showAllOrders);
     }
 
     // if (e.target.id.includes('logo')) {
-    //   console.warn('home screen');
-    //   viewHomeScreen(uid);
+    // console.warn('home screen');
+    // viewHomeScreen(uid);
     // }
   });
 };

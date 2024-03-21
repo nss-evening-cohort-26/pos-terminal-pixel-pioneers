@@ -37,7 +37,7 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
 
 // create new order
 const createNewOrder = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders.json/`, {
+  fetch(`${endpoint}/orders.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
