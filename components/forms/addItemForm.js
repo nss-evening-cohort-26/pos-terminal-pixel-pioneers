@@ -12,7 +12,7 @@ const addItemForm = (obj = {}) => { // setting the default value to empty object
       </div>
       <div class="form-group">
         <label for="image">Item Price</label>
-        <input type="text" class="form-control" id="item_price" placeholder="Item Price" value="${obj.itemPrice || ''}"required>
+        <input type="number" min="0.00" max="10000.00" class="form-control" id="item_price" placeholder="Item Price" value="${obj.itemPrice || ''}"required>
       </div>
       <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Item' : 'Submit Item'}</button>
     </form>`;

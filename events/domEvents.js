@@ -6,6 +6,7 @@ import addOrderForm from '../components/forms/addOrderForm';
 import { deleteItem, getItems, getSingleItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
 import addItemForm from '../components/forms/addItemForm';
+import closeOrderForm from '../components/forms/closeOrderForm';
 import showOrderItems from '../api/showOrderItems';
 
 const domEvents = (uid) => {
@@ -65,6 +66,13 @@ const buttonEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
 
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject, uid));
+    }
+    if (e.target.id.includes('go-to-payment-btn')) {
+      console.warn('button clicked');
+      closeOrderForm({}, uid);
+    }
+    if (e.target.id.includes('add-item-btn')) {
+      addItemForm({}, uid);
     }
   });
 };
