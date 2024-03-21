@@ -3,12 +3,14 @@
     "firebaseKey": "-NspVTS1bBhkEqIHZPQw",
     "itemName": "Hawaiian Pizza (Ham, Pineapple)",
     "itemPrice": 11,
+    "orderID": "",
     "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
   },
   "-NspVTS1bBhkEqIHZPQx": {
     "firebaseKey": "-NspVTS1bBhkEqIHZPQx",
     "itemName": "Garlic Parmesan Wings",
     "itemPrice": 20,
+    "orderID": "",
     "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
   },
   "-NspVTS29Ffzp3eJP7yk": {
@@ -28,7 +30,7 @@
   "-NspVTS4xOnyHd3_xKq7": {
     "firebaseKey": "-NspVTS4xOnyHd3_xKq7",
     "itemName": "Buffalo Wings",
-    "itemPrice": 14,
+    "itemPrice": "16",
     "orderID": "-NspU6ANVW8wJToBTun9",
     "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
   },
