@@ -8,8 +8,10 @@ const emptyItems = () => {
 
 const showAllItems = (array) => {
   clearDom();
+  console.warn(array);
+  const total = array.reduce((totalPrice, item) => totalPrice + parseFloat(item.itemPrice), 0);
 
-  let domString = '';
+  let domString = `<div><h1>Total: $${Number((total).toFixed(2))} </h1></div>`;
   array.forEach((obj) => {
     domString += `
       <div class="card" style="width: 18rem;">
@@ -23,6 +25,8 @@ const showAllItems = (array) => {
       </div>
       `;
   });
+  domString += `<div>
+  <button id="add-item-btn" class="btn-home btn-danger">Add Item</button><button id="go-to-payment-btn" class="btn-home btn-danger">Go To Payment</button></div>`;
   renderToDom('#view', domString);
 };
 
