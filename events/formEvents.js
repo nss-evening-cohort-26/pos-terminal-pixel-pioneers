@@ -6,7 +6,7 @@ import { showAllItems } from '../pages/items';
 import { showAllOrders } from '../pages/orders';
 
 const formEvents = (uid) => {
-  document.querySelector('#main-container').addEventListener('submit', (e) => {
+  document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
 
     // ADD CLICK EVENT FOR SUBMITTING NEW ITEM
