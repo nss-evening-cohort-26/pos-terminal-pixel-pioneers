@@ -15,6 +15,6 @@ const viewItem = (obj) => {
   </div>
 </div>
 `;
-  renderToDom('#item-cards', domString);
+  renderToDom('#view', domString);
 };
 export default viewItem;

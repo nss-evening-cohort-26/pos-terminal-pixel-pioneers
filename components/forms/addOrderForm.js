@@ -14,11 +14,11 @@ const addOrderForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="description">Customer Phone</label>
-        <textarea class="form-control" id="order-phone" style="height: 100px">${obj.customerPhone || ''}</textarea>
+        <textarea type="phone" class="form-control" id="order-phone" style="height: 100px">${obj.customerPhone || ''}</textarea>
       </div>
       <div class="form-group">
       <label for="description">Customer Email</label>
-      <textarea class="form-control" id="order-email" style="height: 100px">${obj.customerEmail || ''}</textarea>
+      <textarea type="email" class="form-control" id="order-email" style="height: 100px">${obj.customerEmail || ''}</textarea>
     </div>
     <label for="orders">Order Type:</label>
     <select name="order-type" id="types-of-orders">

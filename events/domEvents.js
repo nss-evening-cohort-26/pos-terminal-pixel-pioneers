@@ -1,28 +1,17 @@
 import { deleteOrder, getOrders, getSingleOrder } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
-// import clearDom from '../utils/clearDom';
-// import { showAllItems } from '../pages/items';
 import addOrderForm from '../components/forms/addOrderForm';
 import { deleteItem, getItems, getSingleItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
 import addItemForm from '../components/forms/addItemForm';
-import closeOrderForm from '../components/forms/closeOrderForm';
-
-// // import addBookForm from '../components/forms/addBookForm';
-// import { getItem, getSingleItem } from '../api/itemData';
-// import { showAllItems } from '../pages/items';
-// // import addItemForm from '../components/forms/addAuthorForm';
-// // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
-// // import viewOrder from '../pages/viewBook';
-// // import viewAuthors from '../pages/viewAuthor';
+import viewOrder from '../pages/viewOrder';
+import getOrderDetails from '../api/mergedData';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
     // TODO: CLICK EVENT FOR VIEWING ORDERS
     if (e.target.id.includes('view-btn')) {
       getOrders(uid).then((orders) => showAllOrders(orders));
-      // console.warn(e.target.id);
-      // clearDom(3);
     }
     // CLICK EVENT FOR CREATE ORDER FORM WELCOME BUTTON
     if (e.target.id.includes('create-btn')) {
@@ -32,9 +21,11 @@ const domEvents = (uid) => {
 };
 const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
-    // CLICK EVENT FOR VIEW ORDER DETAILS
+    // CLICK EVENT FOR VIEW ORDERS
     if (e.target.id.includes('view-order-btn--')) {
-      getItems(uid).then((items) => showAllItems(items));
+      console.warn('CLICKED ORDER DETAILS', e.target.id);
+      const [, firebaseKey] = e.target.id.split('--');
+      getOrderDetails(firebaseKey).then(viewOrder);
     }
 
     // CLICK EVENT FOR DELETING A ORDER
@@ -74,10 +65,7 @@ const buttonEvents = (uid) => {
 
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject, uid));
     }
-    if (e.target.id.includes('go-to-payment-btn')) {
-      console.warn('button clicked');
-      closeOrderForm({}, uid);
-    }
+
     if (e.target.id.includes('add-item-btn')) {
       addItemForm({}, uid);
     }

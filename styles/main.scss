@@ -43,3 +43,17 @@ background: red;
 #rev-btn {
 background: goldenrod;
 }
+#home-btn-container {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  width: 90%;
+}
+
+.showAllItems {
+  display: flex;
+  flex-direction: row;
+}

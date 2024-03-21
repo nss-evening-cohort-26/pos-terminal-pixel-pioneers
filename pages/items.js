@@ -17,16 +17,14 @@ const showAllItems = (array) => {
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${obj.itemName}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">$${obj.itemPrice}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">${obj.itemPrice}</h6>
           <hr>
           <i class="btn btn-info" id="update-item-btn--${obj.firebaseKey}"><span class="fas fa-edit"></span></i>
           <i class="btn btn-danger" id="delete-item-btn--${obj.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
         </div>
-      </div>
-      `;
+      </div>`;
   });
-  domString += `<div>
-  <button id="add-item-btn" class="btn-home btn-danger">Add Item</button><button id="go-to-payment-btn" class="btn-home btn-danger">Go To Payment</button></div>`;
+
   renderToDom('#view', domString);
 };
 

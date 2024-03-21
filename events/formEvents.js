@@ -8,13 +8,13 @@ import { showAllOrders } from '../pages/orders';
 const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
-
     // ADD CLICK EVENT FOR SUBMITTING NEW ITEM
     if (e.target.id.includes('submit-item')) {
       console.warn('CLICKED SUBMIT ITEM');
       const payload = {
         itemName: document.querySelector('#item_name').value,
         itemPrice: document.querySelector('#item_price').value,
+        orderID: document.querySelector('#order_id').value,
         uid,
       };
       createNewItems(payload).then(({ name }) => {
@@ -32,6 +32,7 @@ const formEvents = (uid) => {
       const payload = {
         itemName: document.querySelector('#item_name').value,
         itemPrice: document.querySelector('#item_price').value,
+        orderID: document.querySelector('#order_id').value,
         firebaseKey,
       };
       updateItem(payload).then(() => {
