@@ -5,22 +5,16 @@ const viewOrder = (obj) => {
   clearDom();
 
   const domString = `
-   <div class="card" style="width: 18rem; margin-bottom: 10px;">
-       <div class="card-body">
-         <h5 class="order-name">${obj.name}</h5>
-         <p class="card-subtitle mb-2 text-muted">${obj.isOpen}</p>
-         <p class="card-subtitle mb-2 text-muted">${obj.customerPhone}</p>
-         <p class="card-subtitle mb-2 text-muted">${obj.customerEmail}</p>
-         <p class="card-subtitle mb-2 text-muted">${obj.orderType}</p>
-         <hr>
-         <div style="margin-bottom: 15px;">
-         </div>
-         <i class="btn btn-success" id="view-order-btn--${obj.firebaseKey}"><span class="fas fa-eye"></span></i>
-         <i id="edit-order-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"><span class="fas fa-edit"></span></i>
-         <i id="delete-order-btn--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"><span class="fas fa-trash-alt"></span></i>
-       </div>
-     </div>
-   `;
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">${obj.itemName}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">$${obj.itemPrice}</h6>
+      <hr>
+      <i class="btn btn-info" id="update-item-btn--${obj.firebaseKey}"><span class="fas fa-edit"></span></i>
+      <i class="btn btn-danger" id="delete-item-btn--${obj.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
+    </div>
+  </div>
+  `;
   renderToDom('#order-cards', domString);
 };
 export default viewOrder;

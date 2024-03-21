@@ -1,32 +1,31 @@
-import { getSingleOrder, deleteOrder } from './orderData';
-import { getSingleItems, getItemsOrder, deleteItem } from './itemData';
+import { getSingleItems, deleteItem } from './itemData';
+import { getSingleOrder, deleteOrder, getOrderItems } from './orderData';
 
 // TODO: Get data for viewBook
-const getOrderDetails = async (firebaseKey) => { // the async keyword let's JS know this is asynchronous function (promise)
-  const ordersObject = await getSingleOrder(firebaseKey); // await stops the code in this function and waits for the response. This is like using .then
-  const itemsObject = await getSingleItems(ordersObject.orderID); // this function uses the data response from the bookObject
+const getItemDetails = async (firebaseKey) => { // the async keyword let's JS know this is asynchronous function (promise)
+  const itemsObject = await getSingleItems(firebaseKey); // await stops the code in this function and waits for the response. This is like using .then
+  const ordersObject = await getSingleOrder(itemsObject.orderID); // this function uses the data response from the bookObject
 
   return { ...itemsObject, ordersObject };
 };
 
-const deleteItemOrdersRelationship = (firebaseKey) => new Promise((resolve, reject) => {
-  getItemsOrder(firebaseKey).then((itemOrdersArray) => {
-    const deleteOrderPromises = itemOrdersArray.map((orders) => deleteOrder(orders.firebaseKey));
+const deleteOrderItemsRelationship = (firebaseKey) => new Promise((resolve, reject) => {
+  getOrderItems(firebaseKey).then((orderItemsArray) => {
+    const deleteItemsPromises = orderItemsArray.map((items) => deleteItem(items.firebaseKey));
 
-    Promise.all(deleteOrderPromises).then(() => {
-      deleteItem(firebaseKey).then(resolve);
+    Promise.all(deleteItemsPromises).then(() => {
+      deleteOrder(firebaseKey).then(resolve);
     });
   }).catch(reject);
 });
 
-const getItemDetails = async (firebaseKey) => {
-  const itemsObject = await getSingleItems(firebaseKey);
-  const itemOrders = await getItemsOrder(firebaseKey);
-  return { ...itemsObject, orders: itemOrders };
+const getOrdersDetails = async (firebaseKey) => {
+  const ordersObject = await getSingleOrder(firebaseKey);
+  const orderItems = await getOrderItems(firebaseKey);
+  return { ...ordersObject, items: orderItems };
 };
-
 export {
-  getOrderDetails,
-  deleteItemOrdersRelationship,
-  getItemDetails
+  getItemDetails,
+  deleteOrderItemsRelationship,
+  getOrdersDetails,
 };

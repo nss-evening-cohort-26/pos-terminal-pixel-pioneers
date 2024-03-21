@@ -1,4 +1,4 @@
-import { deleteOrder, getOrders, getSingleOrder } from '../api/orderData';
+import { getOrders, getSingleOrder } from '../api/orderData';
 import { showAllOrders } from '../pages/orders';
 // import clearDom from '../utils/clearDom';
 // import { showAllItems } from '../pages/items';
@@ -7,14 +7,9 @@ import { deleteItem, getItems, getSingleItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
 import addItemForm from '../components/forms/addItemForm';
 import closeOrderForm from '../components/forms/closeOrderForm';
-
-// // import addBookForm from '../components/forms/addBookForm';
-// import { getItem, getSingleItem } from '../api/itemData';
-// import { showAllItems } from '../pages/items';
-// // import addItemForm from '../components/forms/addAuthorForm';
-// // import { getBookDetails, getAuthorDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
-// // import viewOrder from '../pages/viewBook';
-// // import viewAuthors from '../pages/viewAuthor';
+import viewOrder from '../pages/viewOrder';
+import { deleteOrderItemsRelationship, getOrdersDetails } from '../api/mergedData';
+// import viewItem from '../pages/viewItem';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -34,18 +29,19 @@ const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
-      getItems(uid).then((items) => showAllItems(items));
+      const [, firebaseKey] = e.target.id.split('--');
+      getOrdersDetails(firebaseKey).then(viewOrder);
     }
 
     // CLICK EVENT FOR DELETING A ORDER
     if (e.target.id.includes('delete-order-btn')) {
     // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
-        console.warn('DELETE AUTHOR', e.target.id);
+        console.warn('DELETE ORDER', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteOrderItemsRelationship(firebaseKey).then(() => {
-          getItems(uid).then(showAllItems);
+          getOrders(uid).then(showAllOrders);
         });
       }
     }
