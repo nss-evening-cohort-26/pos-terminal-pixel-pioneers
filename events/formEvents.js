@@ -10,7 +10,7 @@ import {
 // may need to update the imports based on where viewRevenue, createRevenue and updateRevenue are placed :)
 
 const formEvents = (uid) => {
-  document.querySelector('#main-container').addEventListener('submit', (e) => {
+  document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
 
     // ADD CLICK EVENT FOR SUBMITTING NEW ITEM

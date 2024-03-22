@@ -7,7 +7,7 @@ import { deleteItem, getItems, getSingleItems } from '../api/itemData';
 import { showAllItems } from '../pages/items';
 import addItemForm from '../components/forms/addItemForm';
 import closeOrderForm from '../components/forms/closeOrderForm';
-// import showOrderItems from '../api/showOrderItems';
+// import showOrderItems from '../api/';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -27,6 +27,7 @@ const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
+      // getItems(uid).then((items) => showOrderItems(items));
       // getItems(uid).then((items) => showOrderItems(items));
     }
 
