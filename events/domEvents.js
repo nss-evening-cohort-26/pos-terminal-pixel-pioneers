@@ -9,6 +9,7 @@ import addItemForm from '../components/forms/addItemForm';
 import closeOrderForm from '../components/forms/closeOrderForm';
 import viewOrder from '../pages/viewOrder';
 import { deleteOrderItemsRelationship, getOrdersDetails } from '../api/mergedData';
+import clearDom from '../utils/clearDom';
 // import viewItem from '../pages/viewItem';
 
 const domEvents = (uid) => {
@@ -30,6 +31,7 @@ const buttonEvents = (uid) => {
     // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
       const [, firebaseKey] = e.target.id.split('--');
+      clearDom();
       getOrdersDetails(firebaseKey).then(viewOrder);
     }
 

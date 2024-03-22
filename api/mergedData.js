@@ -1,5 +1,5 @@
-import { getSingleItems, deleteItem } from './itemData';
-import { getSingleOrder, deleteOrder, getOrderItems } from './orderData';
+import { getSingleItems, deleteItem, getItemsOrder } from './itemData';
+import { getSingleOrder, deleteOrder } from './orderData';
 
 // TODO: Get data for viewBook
 const getItemDetails = async (firebaseKey) => { // the async keyword let's JS know this is asynchronous function (promise)
@@ -10,7 +10,7 @@ const getItemDetails = async (firebaseKey) => { // the async keyword let's JS kn
 };
 
 const deleteOrderItemsRelationship = (firebaseKey) => new Promise((resolve, reject) => {
-  getOrderItems(firebaseKey).then((orderItemsArray) => {
+  getItemsOrder(firebaseKey).then((orderItemsArray) => {
     const deleteItemsPromises = orderItemsArray.map((items) => deleteItem(items.firebaseKey));
 
     Promise.all(deleteItemsPromises).then(() => {
@@ -21,7 +21,7 @@ const deleteOrderItemsRelationship = (firebaseKey) => new Promise((resolve, reje
 
 const getOrdersDetails = async (firebaseKey) => {
   const ordersObject = await getSingleOrder(firebaseKey);
-  const orderItems = await getOrderItems(firebaseKey);
+  const orderItems = await getItemsOrder(firebaseKey);
   return { ...ordersObject, items: orderItems };
 };
 export {

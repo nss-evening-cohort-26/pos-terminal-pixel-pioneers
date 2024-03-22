@@ -77,17 +77,17 @@ const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // TODO: GET A SINGLE Order Items
-const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders.json?orderBy="orderID"&equalTo="${firebaseKey}"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
+// const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
+//   fetch(`${endpoint}/orders.json?orderBy="orderID"&equalTo="${firebaseKey}"`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => resolve(Object.values(data)))
+//     .catch(reject);
+// });
 
 export {
   getOrders,
@@ -95,5 +95,5 @@ export {
   updateOrder,
   deleteOrder,
   getSingleOrder,
-  getOrderItems
+  // getOrderItems
 };
