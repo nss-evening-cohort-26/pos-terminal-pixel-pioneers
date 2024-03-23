@@ -27,7 +27,7 @@ const showAllItems = (array) => {
   });
   domString += `<div>
   <button id="add-item-btn" class="btn-home btn-danger">Add Item</button><button id="go-to-payment-btn" class="btn-home btn-danger">Go To Payment</button></div>`;
-  renderToDom('#view', domString);
+  renderToDom('#order-cards', domString);
 };
 
 export { showAllItems, emptyItems };

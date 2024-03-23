@@ -1,4 +1,7 @@
-import { createNewItems, getItems, updateItem } from '../api/itemData';
+import {
+  createNewItems, getItems, getItemsOrder, updateItem
+} from '../api/itemData';
+// import { getItemDetails } from '../api/mergedData';
 import {
   createNewOrder, getOrders, updateOrder
 } from '../api/orderData';
@@ -15,18 +18,18 @@ const formEvents = (uid) => {
 
     // ADD CLICK EVENT FOR SUBMITTING NEW ITEM
     if (e.target.id.includes('submit-item')) {
+      const [, firebaseKey] = e.target.id.split('--');
       console.warn('CLICKED SUBMIT ITEM');
       const payload = {
         itemName: document.querySelector('#item_name').value,
         itemPrice: document.querySelector('#item_price').value,
-        uid,
+        orderID: document.querySelector('#order_id').value,
+        firebaseKey,
+        uid
       };
-      createNewItems(payload).then(({ name }) => {
-        const patchPayLoad = { firebaseKey: name };
-
-        updateItem(patchPayLoad).then(() => {
-          getItems(uid).then(showAllItems);
-        });
+      console.warn();
+      createNewItems(payload).then(() => {
+        getItemsOrder(uid).then(showAllItems);
       });
     }
 
