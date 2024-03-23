@@ -1,0 +1,42 @@
+{
+  "-NtTeijyXSHG65PyM2Xd": {
+    "firebaseKey": "-NtTeijyXSHG65PyM2Xd",
+    "orderType": "Phone",
+    "total": 27.54,
+    "tipAmount": 8.50,
+    "paymentType": "cash",
+    "date": "5/7/2023",
+    "order_ID": "1203827679",
+    "uid": "CSZfS5YfvIagGNQo3EHXKi00DfC3"
+  },
+  "-NtTeik-6aMsglEmsXZs": {
+    "firebaseKey": "-NtTeik-6aMsglEmsXZs",
+    "orderType": "In-Person",
+    "total": 49.54,
+    "tipAmount": 16.35,
+    "paymentType": "credit",
+    "date": "9/2/2023",
+    "order_ID": "2903812977",
+    "uid": "zRFDeTGVg6Zu5IIWhGMec9QXAqR2"
+  },
+  "-NtTeik0UMs7Rg4q1G8S": {
+    "firebaseKey": "-NtTeik0UMs7Rg4q1G8S",
+    "orderType": "Phone",
+    "total": 27.23,
+    "tipAmount": 9.25,
+    "paymentType": "debit",
+    "date": "5/3/2023",
+    "order_ID": "0081480334",
+    "uid": "pLY8Vi4mDBgQNRkpf0N8v8zxgir1"
+  },
+  "-NtTeik2yeIqJy8zeSaW": {
+    "firebaseKey": "-NtTeik2yeIqJy8zeSaW",
+    "orderType": "In-Person",
+    "total": 55.66,
+    "tipAmount": 11.34,
+    "paymentType": "credit",
+    "date": "11/2/2023",
+    "order_ID": "5583125594",
+    "uid": "dpZJYRdBFpdbrtIbIIzfgXsyU8y2"
+  }
+}
