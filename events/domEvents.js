@@ -30,9 +30,13 @@ const buttonEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn--')) {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const orderID = urlParams.get('orderID');
+      // keep reading the include to get order id
       const [, firebaseKey] = e.target.id.split('--');
       clearDom();
-      getOrdersDetails(firebaseKey).then(viewOrder);
+      getOrdersDetails(orderID, firebaseKey).then(viewOrder);
     }
 
     // CLICK EVENT FOR DELETING A ORDER

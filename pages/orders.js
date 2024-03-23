@@ -19,7 +19,7 @@ const showAllOrders = (getOrders) => {
         <h6 class="card-subtitle mb-2 text-muted">${item.customerEmail}</h6>   
         <hr>
         <p class="card-text">${item.orderType}</p>
-        <i class="btn btn-success" id="view-order-btn--${item.firebaseKey}"><span class="fas fa-eye"></span></i>
+        <i class="btn btn-success" id="view-order-btn--${item.firebaseKey}--${item.orderID}"><span class="fas fa-eye"></span></i>
         <i class="btn btn-info" id="update-order--${item.firebaseKey}"><span class="fas fa-edit"></span></i>
         <i class="btn btn-danger" id="delete-order-btn--${item.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
       </div>

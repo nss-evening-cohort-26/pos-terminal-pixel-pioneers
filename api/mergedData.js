@@ -3,10 +3,12 @@ import { getSingleOrder, deleteOrder } from './orderData';
 
 // TODO: Get data for viewBook
 const getItemDetails = async (firebaseKey) => { // the async keyword let's JS know this is asynchronous function (promise)
-  const itemsObject = await getSingleItems(firebaseKey); // await stops the code in this function and waits for the response. This is like using .then
-  const ordersObject = await getSingleOrder(itemsObject.orderID); // this function uses the data response from the bookObject
+  const ordersObject = await getSingleOrder(firebaseKey); // this function uses the data response from the bookObject
+  console.warn('firebasekey', firebaseKey);
+  const itemsObject = await getSingleItems(ordersObject.orderID); // await stops thecode in this function and waits for the response. This is like using .then
+  console.warn('orderId', itemsObject);
 
-  return { ...itemsObject, ordersObject };
+  return { ...ordersObject, itemsObject };
 };
 
 const deleteOrderItemsRelationship = (firebaseKey) => new Promise((resolve, reject) => {

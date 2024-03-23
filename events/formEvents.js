@@ -1,11 +1,11 @@
-import {
-  createNewItems, getItems, updateItem
-} from '../api/itemData';
-import { getItemDetails } from '../api/mergedData';
+// import {
+// createNewItems, getItems, getItemsOrder, updateItem
+// } from '../api/itemData';
+// import { getItemDetails } from '../api/mergedData';
 import {
   createNewOrder, getOrders, updateOrder
 } from '../api/orderData';
-import { showAllItems } from '../pages/items';
+// import { showAllItems } from '../pages/items';
 import { showAllOrders } from '../pages/orders';
 // import viewItem from '../pages/viewItem';
 
@@ -13,35 +13,6 @@ const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // ADD CLICK EVENT FOR SUBMITTING NEW ITEM
-    if (e.target.id.includes('submit-item')) {
-      console.warn('CLICKED SUBMIT ITEM');
-      const payload = {
-        itemName: document.querySelector('#item_name').value,
-        itemPrice: document.querySelector('#item_price').value,
-        uid,
-      };
-      createNewItems(payload).then(({ name }) => {
-        const patchPayLoad = { firebaseKey: name };
-
-        updateItem(patchPayLoad).then(() => {
-          getItemDetails(uid).then(showAllItems);
-        });
-      });
-    }
-
-    // ADD CLICK EVENT FOR EDITING AN ITEM
-    if (e.target.id.includes('update-item')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      const payload = {
-        itemName: document.querySelector('#item_name').value,
-        itemPrice: document.querySelector('#item_price').value,
-        firebaseKey,
-      };
-      updateItem(payload).then(() => {
-        getItems(uid).then(showAllItems);
-      });
-    }
     // CLICK EVENT FOR SUBMITTING NEW ORDER
     if (e.target.id.includes('submit-order')) {
       const payload = {
@@ -52,10 +23,8 @@ const formEvents = (uid) => {
         uid,
       };
 
-      createNewOrder(payload).then(({ name }) => {
-        const patchPayload = { firebaseKey: name };
-
-        updateOrder(patchPayload).then(() => {
+      createNewOrder(payload).then(({ firebaseKey }) => {
+        updateOrder(firebaseKey).then(() => {
           getOrders(uid).then(showAllOrders);
         });
       });
@@ -78,4 +47,5 @@ const formEvents = (uid) => {
     }
   });
 };
+
 export default formEvents;

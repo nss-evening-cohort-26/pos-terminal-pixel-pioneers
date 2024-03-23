@@ -19,6 +19,7 @@ const getItems = (uid) => new Promise((resolve, reject) => {
 
 // gets single item
 const getSingleItems = (firebaseKey) => new Promise((resolve, reject) => {
+  console.warn(firebaseKey);
   fetch(`${endpoint}/items/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
@@ -26,7 +27,9 @@ const getSingleItems = (firebaseKey) => new Promise((resolve, reject) => {
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(data))
+    .then((data) => {
+      resolve(data);
+    })
     .catch(reject);
 });
 
