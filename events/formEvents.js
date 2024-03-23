@@ -7,9 +7,8 @@ import {
 } from '../api/orderData';
 import { showAllItems } from '../pages/items';
 import { showAllOrders } from '../pages/orders';
-import {
-  getOrderDetails, viewRevenuePage, createRevenue, updateRevenue
-} from '../api/mergedData';
+// import { getOrderDetails } from '../api/mergedData';
+
 // may need to update the imports based on where viewRevenue, createRevenue and updateRevenue are placed :)
 
 const formEvents = (uid) => {
@@ -80,33 +79,33 @@ const formEvents = (uid) => {
       });
     }
 
-    if (e.target.id.includes('close-order-btn')) {
-      const [, orderFirebaseKey] = e.target.id.split('--');
-      // gets order details merged data call, based on the orders firebaseKey
-      getOrderDetails(orderFirebaseKey).then((order) => {
-        // makes tip amount
-        const tip = Number(document.querySelector('#tip-amount').value);
-        const payload = {
-          total: (order.items.reduce((total, item) => total + Number(item.itemPrice), 0) + tip).toFixed(2),
-          dateClose: Date.now(),
-          orderType: order.orderType,
-          orderID: order.orderID,
-          paymentType: document.querySelector('paymentType').value,
-          uid,
-        };
-        createRevenue(payload).then(({ name }) => {
-          // creates a revenue firebaseKey
-          const revenuePatchPayload = { firebaseKey: name };
-          updateRevenue(revenuePatchPayload);
-          // should change the order status to false; based on firebaseKey (I think?)
-          const orderPatchPayload = { isOpen: !true, firebaseKey: orderFirebaseKey };
-          updateOrder(orderPatchPayload).then(
-            // I think this should go directly to the revenue page? But I'm okay if it goes back to the viewOrders page also; doesn't matter to me.
-            getOrderDetails(orderFirebaseKey).then(viewRevenuePage)
-          );
-        });
-      });
-    }
+    // if (e.target.id.includes('close-order-btn')) {
+    //   const [, orderFirebaseKey] = e.target.id.split('--');
+    //   // gets order details merged data call, based on the orders firebaseKey
+    //   getOrderDetails(orderFirebaseKey).then((order) => {
+    //     // makes tip amount
+    //     const tip = Number(document.querySelector('#tip-amount').value);
+    //     const payload = {
+    //       total: (order.items.reduce((total, item) => total + Number(item.itemPrice), 0) + tip).toFixed(2),
+    //       dateClose: Date.now(),
+    //       orderType: order.orderType,
+    //       orderID: order.orderID,
+    //       paymentType: document.querySelector('paymentType').value,
+    //       uid,
+    //     };
+    // createRevenue(payload).then(({ name }) => {
+    //   // creates a revenue firebaseKey
+    //   const revenuePatchPayload = { firebaseKey: name };
+    //   updateRevenue(revenuePatchPayload);
+    //   // should change the order status to false; based on firebaseKey (I think?)
+    //   const orderPatchPayload = { isOpen: !true, firebaseKey: orderFirebaseKey };
+    //   updateOrder(orderPatchPayload).then(
+    //     // I think this should go directly to the revenue page? But I'm okay if it goes back to the viewOrders page also; doesn't matter to me.
+    //     getOrderDetails(orderFirebaseKey).then(viewRevenuePage)
+    //   );
+    // });
+    // });
+    // }
   });
 };
 
