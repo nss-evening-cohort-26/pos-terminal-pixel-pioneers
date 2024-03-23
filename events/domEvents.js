@@ -11,6 +11,7 @@ import viewOrder from '../pages/viewOrder';
 import { deleteOrderItemsRelationship, getOrdersDetails } from '../api/mergedData';
 import clearDom from '../utils/clearDom';
 // import viewItem from '../pages/viewItem';
+import showRevenue from '../pages/revenue';
 
 const domEvents = (uid) => {
   document.querySelector('#home-container').addEventListener('click', (e) => {
@@ -23,6 +24,10 @@ const domEvents = (uid) => {
     // CLICK EVENT FOR CREATE ORDER FORM WELCOME BUTTON
     if (e.target.id.includes('create-btn')) {
       addOrderForm({}, uid);
+    }
+    // CLICK EVENT FOR CREATE ORDER FORM WELCOME BUTTON
+    if (e.target.id.includes('rev-btn')) {
+      showRevenue(uid);
     }
   });
 };
@@ -78,6 +83,9 @@ const buttonEvents = (uid) => {
     }
     if (e.target.id.includes('add-item-btn')) {
       addItemForm({}, uid);
+    }
+    if (e.target.id.includes('close-order-btn')) {
+      showRevenue(uid);
     }
   });
 };
