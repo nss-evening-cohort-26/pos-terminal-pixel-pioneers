@@ -21,7 +21,11 @@ const closeOrderForm = (obj = {}) => {
         <input type="number" min="0.00" max="10000.00" step="0.01" class="form-control" id="tip-amount" required>
       </div>
       <div class="submit-update-btn">
+<<<<<<< HEAD
+      <button id="close-order-btn" type="submit" class="sub-up-btn btn btn-primary">Close Order</button>
+=======
       <button type="submit" class="sub-up-btn btn btn-primary">Close Order</button>
+>>>>>>> c20a3c3b2fc6cedffd001d43518e4536804de19d
       </div>
     </form>`;
 
