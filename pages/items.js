@@ -7,6 +7,7 @@ const emptyItems = () => {
 };
 
 const showAllItems = (array) => {
+const showAllItems = (array) => {
   clearDom();
   console.warn(array);
   const total = array.reduce((totalPrice, item) => totalPrice + parseFloat(item.itemPrice), 0);
