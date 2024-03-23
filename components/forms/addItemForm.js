@@ -5,7 +5,7 @@ import renderToDOM from '../../utils/renderToDom';
 const addItemForm = (obj = {}) => { // setting the default value to empty object; (obj = {}) as a parameter
   clearDom();
   const domString = ` 
-    <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : 'submit-item'}" class="mb-4">
+    <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : `submit-item--${obj.orderID}`}" class="mb-4">
       <div class="form-group">
         <label for="image">Item Name</label>
         <input type="text" class="form-control" id="item_name" placeholder="Item Name" value="${obj.itemName || ''}" required>

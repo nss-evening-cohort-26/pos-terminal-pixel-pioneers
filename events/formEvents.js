@@ -1,9 +1,13 @@
-import { createNewItems, getItems, updateItem } from '../api/itemData';
+import {
+  createNewItems, getItems, updateItem
+} from '../api/itemData';
+import { getItemDetails } from '../api/mergedData';
 import {
   createNewOrder, getOrders, updateOrder
 } from '../api/orderData';
 import { showAllItems } from '../pages/items';
 import { showAllOrders } from '../pages/orders';
+// import viewItem from '../pages/viewItem';
 
 const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
@@ -21,7 +25,7 @@ const formEvents = (uid) => {
         const patchPayLoad = { firebaseKey: name };
 
         updateItem(patchPayLoad).then(() => {
-          getItems(uid).then(showAllItems);
+          getItemDetails(uid).then(showAllItems);
         });
       });
     }
