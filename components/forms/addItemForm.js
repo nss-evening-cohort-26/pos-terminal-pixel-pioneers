@@ -13,5 +13,6 @@ const addItemForm = (uid, obj = {}) => { // setting the default value to empty o
   // ternary on line 7 & 16 changes button text pending if there is a firebasekey associated with the api call
   renderToDom('#form-container', domString); // renders above to the DOM based on the div id and what to push HTML wisw
   selectItem(uid, `${obj.itemName || ''}`);
+  console.warn(obj.itemName, 'itemName');
 };
 export default addItemForm;
